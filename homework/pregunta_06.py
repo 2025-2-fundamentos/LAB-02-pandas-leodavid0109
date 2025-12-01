@@ -15,3 +15,12 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
+    import pandas as pd
+
+    # Leer el archivo tbl1.tsv
+    df = pd.read_csv("files/input/tbl1.tsv", sep="\t")
+
+    # Obtener los valores únicos de la columna 'c4', convertirlos a mayúsculas y ordenarlos alfabéticamente
+    unique_values = sorted(df['c4'].str.upper().unique())
+
+    return unique_values

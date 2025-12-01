@@ -23,3 +23,12 @@ def pregunta_09():
     39  39  E   5  1998-01-26  1998
 
     """
+    import pandas as pd
+
+    # Leer el archivo tbl0.tsv
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
+
+    # Extraer el año de la columna 'c3' y agregarlo como una nueva columna 'year'
+    df['year'] = df['c3'].str[:4]
+
+    return df
